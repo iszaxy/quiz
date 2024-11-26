@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #cde6ff; 
+            margin: 0;
+            padding: 20px;
+        }
+
+        #perguntas {
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border: 5px solid #405403; 
+        }
+
+        .pergunta {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #cdbcd4; 
+        }
+
+        .pergunta h1 {
+            font-size: 24px;
+            color: #ff1466; 
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #b471b9; 
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #edd712;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="perguntas">
+        <div class="pergunta">
+            <h1>Qual sua cor favorita?</h1>
+            <label><input type="radio" name="p1" value="amarelo">Amarelo</label>
+            <label><input type="radio" name="p1" value="verde">Verde</label>
+            <label><input type="radio" name="p1" value="azul">Azul</label>
+            <label><input type="radio" name="p1" value="roxo">Roxo</label>
+        </div>
+        <div class="pergunta">
+            <h1>Qual sua princesa favorita?</h1>
+            <label><input type="radio" name="p2" value="bela">Bela e a Fera</label>
+            <label><input type="radio" name="p2" value="tiana">Tiana</label>
+            <label><input type="radio" name="p2" value="cinderela">Cinderela</label>
+            <label><input type="radio" name="p2" value="rapunzel">Rapunzel</label>
+        </div>
+        <div class="pergunta">
+            <h1>Qual seu passatempo?</h1>
+            <label><input type="radio" name="p3" value="ler">Ler livros</label>
+            <label><input type="radio" name="p3" value="cozinhar">Cozinhar</label>
+            <label><input type="radio" name="p3" value="conversar">Conversar com seus animaizinhos</label>
+            <label><input type="radio" name="p3" value="pintar">Pintar paisagens</label>
+        </div>
+        <div class="pergunta">
+            <h1>Qual é o seu príncipe favorito?</h1>
+            <label><input type="radio" name="p4" value="adam">Príncipe Adam</label>
+            <label><input type="radio" name="p4" value="naveen">Príncipe Naveen</label>
+            <label><input type="radio" name="p4" value="henry">Príncipe Henry (Encantado)</label>
+            <label><input type="radio" name="p4" value="jose">José Bezerra (Flyn Rider)</label>
+        </div>
+        <button onclick="contarVotos()">Resultado</button>
+        <h1 id="bela"></h1>
+        <h1 id="tiana"></h1>
+        <h1 id="cinderela"></h1>
+        <h1 id="rapunzel"></h1>
+    </div>
+    <script>
+        function contarVotos() {
+            let contBela = 0;
+            let contTiana = 0;
+            let contCinderela = 0;
+            let contRapunzel = 0;
+
+            let radios = document.querySelectorAll('input[type="radio"]');
+            
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    switch (radios[i].value) {
+                        case "bela":
+                            contBela++;
+                            break;
+                        case "tiana":
+                            contTiana++;
+                            break;
+                        case "cinderela":
+                            contCinderela++;
+                            break;
+                        case "rapunzel":
+                            contRapunzel++;
+                            break;
+                    }
+                }
+            }
+            document.getElementById("bela").innerHTML = "Votos Bela: " + contBela;
+            document.getElementById("tiana").innerHTML = "Votos Tiana: " + contTiana;
+            document.getElementById("cinderela").innerHTML = "Votos Cinderela: " + contCinderela;
+            document.getElementById("rapunzel").innerHTML = "Votos Rapunzel: " + contRapunzel;
+        }
+    </script>
+</body>
+</html>
+
+    
+
+</script>
+
+
+</body>
+</html>
